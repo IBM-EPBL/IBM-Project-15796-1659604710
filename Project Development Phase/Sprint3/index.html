@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Phishing URL detection</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <ul class="logo_wrapper">
+        <li>
+          <a href="#"><img src="LOGO.png" /></a>
+        </li>
+        <li><h1 class="hook">HOOK PHISH</h1></li>
+        <li><a href="#web" class="right">Check Website</a></li>
+        <li><a href="#side" class="right">About Us</a></li>
+      </ul>
+    </div>
+
+    <div class="header">
+      <h1>PHISHING WEBSITE DETECTION</h1>
+      <p>a measure for detecting malicious websites</p>
+    </div>
+
+    <div class="row">
+      <div class="side" id="side">
+        <div class="wrapper">
+          <div class="About">
+            <div class="About_left">
+              <h2>About</h2>
+              <p>
+                Phishing is a form of fraud in which the attacker tries to learn
+                sensitive information such as login credentials or account
+                information by sending as a reputable entity or person in email
+                or other communication channels.Phishing attacks can paralyze a
+                business. Staff might be unable to continue their work. Data and
+                assets might be stolen or damaged. Customers might be unable to
+                access online services. The reason security defenders struggle
+                to detect phishing domains is because of the unique part of the
+                website domain.
+              </p>
+            </div>
+            <div class="About_right">
+              <img class="phishing-img" src="phishing3.jpg" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="web" id="web">
+      <div class="wrapper">
+        <h3>Check Website</h3>
+        <p>
+          Understanding if the website is a valid one or not is important and
+          plays a vital role in securing the data. To know if the URL is a valid
+          one or your information is at risk. Check your website
+        </p>
+        <form action="{{ url_for('predict') }}" method="post">
+          <input
+            type="text"
+            id="fname"
+            name="url"
+            placeholder="Enter the URL here"
+          /><br /><br />
+          <input type="submit" value="Submit" class="url_button" />
+        </form>
+      </div>
+    </div>
+
+    <div class="footer">
+      <h2>PROTECT YOURSELF FROM PHISHING ATTACKS</h2>
+      <p>Copyright © 2022 University VOC College of Engineering(Tuticorin). All Rights Reserved.</p>
+    </div>
+  </body>
+</html>
