@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Phishing URL detection</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <ul class="logo_wrapper">
+        <li><h1 class="hook">HOOK PHISH</h1></li>
+        <li><a href="#web" class="right">Check Website</a></li>
+        <li><a href="#side" class="right">About Us</a></li>
+      </ul>
+    </div>
+
+    <div class="header">
+      <h1>PHISHING WEBSITE DETECTION</h1>
+      <p>a measure for detecting malicious websites</p>
+    </div>
+
+    <div class="row">
+      <div class="side" id="side">
+        <div class="wrapper">
+          <div class="About">
+            <div class="About_left">
+              <h2>About</h2>
+              <p>
+                Phishing is a form of fraud in which the attacker tries to learn
+                sensitive information such as login credentials or account
+                information by sending as a reputable entity or person in email
+                or other communication channels.Phishing attacks can paralyze a
+                business. Staff might be unable to continue their work. Data and
+                assets might be stolen or damaged. Customers might be unable to
+                access online services. The reason security defenders struggle
+                to detect phishing domains is because of the unique part of the
+                website domain.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="web" id="web">
+      <div class="wrapper">
+        <h2>Check Website</h2>
+        <p>
+          Understanding if the website is a valid one or not is important and
+          plays a vital role in securing the data. To know if the URL is a valid
+          one or your information is at risk. Check your website
+        </p>
+        <form name="form" action="/y_predict" method="post" class="body">
+        <input
+          type="text"
+          id="url"
+          name="url"
+          placeholder="Enter a URL"
+          size="50"
+        />
+          <br /><br />
+        <button type="submit" class="url_button">Submit</button>
+        </form>
+        <h3 style="text-align: center; color: red; font-size: 20px">{{ans}}</h3>
+        <h3 style="text-align: center; color: green; font-size: 20px">{{bns}}</h3>
+      </div>
+    </div>
+
+    <div class="footer">
+      <h2>PROTECT YOURSELF FROM PHISHING ATTACKS</h2>
+      <p>Copyright © 2022 University VOC College of Engineering(Tuticorin). All Rights Reserved.</p>
+    </div>
+  </body>
+<style>
+  html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 80px;
+  text-align: center;
+  background: #2a035e;
+  color: rgb(250, 229, 229);
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: rgb(190, 1, 1);
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: xx-large;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+  font-size: 19px;
+}
+.hook {
+  margin: 0 auto;
+  text-align: center;
+  float: none !important;
+  padding: 41px 157px 0px 86px !important;
+  color: white;
+  font-size: 40px;
+}
+#url {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #cbcddf;
+  color: rgb(21, 1, 1);
+}
+.url_button {
+  background-color: #2a035e;
+  border: none;
+  color: rgb(242, 229, 229);
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Column container */
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+.side h2, .web h2 {
+  text-align: center;
+  font-weight: var(--h-font-weight);
+  color: var(--heading-color);
+  line-height: 1.15em;
+  font-family: var(--h-family-body);
+  font-size: 3rem;
+}
+
+.About p, .web p{
+  line-height: 35px;
+}
+
+.About_left {
+  text-align: center;
+}
+
+
+.phishing-img {
+  width: 500px;
+}
+.web {
+  text-align: center;
+  padding: 10px 0px 50px 0px;
+  }
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: rgba(209, 5, 5, 0.884);
+  color: rgb(250, 229, 229);
+}
+
+.logo_wrapper {
+  max-width: 1283px;
+  margin: 0 auto;
+}
+
+.logo_wrapper li {
+  list-style: none;
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+</html>
